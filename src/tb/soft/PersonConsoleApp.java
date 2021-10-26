@@ -80,6 +80,7 @@ public class PersonConsoleApp {
 					// usunięcie danych aktualnej osoby.
 					currentPerson = null;
 					UI.printInfoMessage("Dane aktualnej osoby zostały usunięte");
+					Collections.RemoveName(currentPerson.getFirstName(), currentPerson.getLastName());
 					break;
 				case 3:
 					// zmiana danych dla aktualnej osoby

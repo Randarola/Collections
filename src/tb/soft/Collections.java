@@ -19,6 +19,13 @@ public class Collections {
         treeSetName.add(name);
         arrayListName.add(name);
         linkedListName.add(name);
-
+    }
+    static public void RemoveName(String name1, String name2)
+    {
+        String name = name1 + " " + name2;
+        hashSetName.remove(name);
+        treeSetName.remove(name);
+        arrayListName.remove(name);
+        linkedListName.remove(name);
     }
 }
