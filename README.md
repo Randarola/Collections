@@ -14,3 +14,7 @@ fajnie by było, gdyby to wyglądało w miarę czytelnie)
 DO ZASTANOWIENIA SIĘ:
 - Czy mogę łatwo sprawić by imię i nazwisko 
   nie zawierały znaków, które nie są literami?
+
+DONE:
+- usuń możliwość edycji danych
+- usuń zawód
