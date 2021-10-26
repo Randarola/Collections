@@ -1,5 +1,4 @@
 package tb.soft;
-
 import java.util.Arrays;
 
 /**
@@ -75,6 +74,7 @@ public class PersonConsoleApp {
 				case 1:
 					// utworzenie nowej osoby
 					currentPerson = createNewPerson();
+					Collections.addName(currentPerson.getFirstName(), currentPerson.getLastName());
 					break;
 				case 2:
 					// usunięcie danych aktualnej osoby.
