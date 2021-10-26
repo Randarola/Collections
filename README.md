@@ -1,6 +1,5 @@
 # kolekcje
-niedokończone <-- brak czasu 
+Zadanie na zajęcia z języków programowania.
+Został w sporej mierze wykorzystany kod napisany przez Pawła Rogalińskiego.
 
-PLAN DZIAŁANIA:
-- dodaj mapy
-- zastanów się w jaki sposób zastosować funckje equals oraz hashcode
+W zadaniu brakuje map oraz wykorzystania metod equals oraz hashCode
