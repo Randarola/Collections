@@ -30,12 +30,14 @@ public class Collections {
         arrayListName.remove(name);
         linkedListName.remove(name);
     }
-    static String message = "Dane wprowadzonych osób:";
+    static String message1 = "Ilość wprowadzonych danych: ";
+    static String message2 = "Dane wprowadzonych osób: ";
     static public void saveData() throws FileNotFoundException
     {
         //Zapisywanie danych w pliku od HashSet
         PrintWriter saveHashSet = new PrintWriter("HashSet.txt");
-        saveHashSet.println(message);
+        saveHashSet.println(message1 + hashSetName.size());
+        saveHashSet.println(message2);
         for(String item : hashSetName)
         {
             saveHashSet.println(item);
@@ -44,7 +46,8 @@ public class Collections {
 
         //Zapisywanie danych w pliku od TreeSet
         PrintWriter saveTreeSet = new PrintWriter("TreeSet.txt");
-        saveTreeSet.println(message);
+        saveTreeSet.println(message1 + treeSetName.size());
+        saveTreeSet.println(message2);
         for(String item : treeSetName)
         {
             saveTreeSet.println(item);
@@ -53,7 +56,8 @@ public class Collections {
 
         //Zapisywanie danych w pliku od ArrayListName
         PrintWriter saveArrayList = new PrintWriter("ArrayList.txt");
-        saveArrayList.println(message);
+        saveArrayList.println(message1 + arrayListName.size());
+        saveArrayList.println(message2);
         for(String item : arrayListName)
         {
             saveArrayList.println(item);
@@ -62,7 +66,8 @@ public class Collections {
 
         //Zapisywanie danych w pliku od LinkedListName
         PrintWriter saveLinkedList = new PrintWriter("LinkedList.txt");
-        saveLinkedList.println(message);
+        saveLinkedList.println(message1 + linkedListName.size());
+        saveLinkedList.println(message2);
         for(String item : linkedListName)
         {
             saveLinkedList.println(item);
