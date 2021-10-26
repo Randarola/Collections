@@ -1,23 +1,6 @@
 package tb.soft;
-/*
- * Program: Prosta biblioteka metod do realizacji dialogu z użytkownikiem
- *          w prostych aplikacjach bez graficznego interfejsu użytkownika.
- *    Plik: ConsoleUserDialog.java
- *          
- *   Autor: Paweł Rogaliński
- *    Data: październik 2018 r.
- *
- */
 
 import java.util.Scanner;
-
-/**
- * Biblioteka metod do realizacji dialogu z użytkownikiem
- * w prostych aplikacjach bez graficznego interfejsu użytkownika.
- *
- * @author Paweł Rogaliński
- *
- */
 public class ConsoleUserDialog {
 	
 	   private final String  ERROR_MESSAGE =
@@ -25,7 +8,6 @@ public class ConsoleUserDialog {
 	   
 	   private final Scanner sc = new Scanner(System.in);
 
-	   
 		public void printMessage(String message) {
 			System.out.println(message);
 		}
@@ -35,15 +17,13 @@ public class ConsoleUserDialog {
 			System.out.println(message);
 			enterString("Nacisnij ENTER");
 		}
-		
-		
+
 		public void printErrorMessage(String message) {
 			System.err.println(message);
 			System.err.println("Nacisnij ENTER");
 			enterString("");
 		}
-		
-		
+
 		public void clearConsole(){
 			System.out.println("\n\n");
 		}
@@ -53,8 +33,7 @@ public class ConsoleUserDialog {
 			System.out.print(prompt);
 			return sc.nextLine();
 		}
-		
-		
+
 		public char enterChar(String prompt) {
 			boolean isError;
 			char c = ' ';
@@ -70,7 +49,6 @@ public class ConsoleUserDialog {
 			return c;
 		}
 
-		
 		public int enterInt(String prompt) {
 	        boolean isError;
 	        int i = 0;
@@ -99,8 +77,7 @@ public class ConsoleUserDialog {
 	            }
 	        } while(isError);
 	        return d;
-	    }   
-		
+	    }
 		
 		public double enterDouble(String prompt) {
 	        boolean isError;
@@ -115,10 +92,8 @@ public class ConsoleUserDialog {
 	            }
 	        }while(isError);
 	        return d;
-	    }   
-
-		
-} // koniec kasy ConsoleUserDialog
+	    }
+}
 
 
 
