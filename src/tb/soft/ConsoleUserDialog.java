@@ -86,7 +86,6 @@ public class ConsoleUserDialog {
 	        return i;
 	    }
 		
-		
 		public float enterFloat(String prompt) {
 	        boolean isError;
 	        float d = 0;

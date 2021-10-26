@@ -123,8 +123,7 @@ public class PersonConsoleApp {
 		if (person != null) {
 			sb.append("Aktualna osoba: \n")
 			  .append("      Imię: ").append(person.getFirstName()).append("\n")
-			  .append("  Nazwisko: ").append(person.getLastName()).append("\n")
-			  .append("   Rok ur.: ").append(person.getBirthYear()).append("\n");
+			  .append("  Nazwisko: ").append(person.getLastName()).append("\n");
 		} else
 			sb.append( "Brak danych osoby\n" );
 		UI.printMessage( sb.toString() );
@@ -141,14 +140,12 @@ public class PersonConsoleApp {
 	static Person createNewPerson(){
 		String first_name = UI.enterString("Podaj imię: ");
 		String last_name = UI.enterString("Podaj nazwisko: ");
-		String birth_year = UI.enterString("Podaj rok ur.: ");
 
 		Person person;
 		try { 
 			// Utworzenie nowego obiektu klasy Person oraz
 			// ustawienie wartości wszystkich atrybutów.
 			person = new Person(first_name, last_name);
-			person.setBirthYear(birth_year);
 
 		} catch (PersonException e) {    
 			// Tu są wychwytywane wyjątki zgłaszane przez metody klasy Person,
