@@ -19,37 +19,6 @@ import java.io.PrintWriter;
  *     Data:  październik 2018 r.
  */
 
-
-/**
- *  Typ wyliczeniowy PersonJob reprezentuje przykładowe stanowiska, 
- *  które może zajmować osoba. Klasa została zaimplementowana
- *  tak, by mogła być rozszerzana o dodatkowe stanowiska.
- *  W tym celu wystarczy do zdefiniowanej listy dodać kolejne
- *  wywołanie konstruktora. 
- */
-enum PersonJob {
-	UNKNOWN("-------"), 
-	GUEST("Gość"), 
-	STUDENT("Student"), 
-	TEACHER("Nauczyciel"), 
-	MANAGER("Kierownik"), 
-	DIRECTOR("Dyrektor");
-
-	String jobName;
-
-	private PersonJob(String job_name) {
-		jobName = job_name;
-	}
-
-	
-	@Override
-	public String toString() {
-		return jobName;
-	}
-	
-}  // koniec klasy enum Job
-
-
 /**
  * Klasa PersonException jest klasą wyjątków służącą do zgłaszania błędów
  * występujących przy operacjach na obiektach klasy Person.
@@ -84,13 +53,13 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private int birthYear;
-	private PersonJob job;
+
  
 	
 	public Person(String first_name, String last_name) throws PersonException {
 		setFirstName(first_name);
 		setLastName(last_name);
-		job = PersonJob.UNKNOWN;
+
 	}
 
 	
@@ -141,42 +110,10 @@ public class Person {
 			throw new PersonException("Rok urodzenia musi być liczbą całkowitą.");
 		}
 	}
-
-
-	public PersonJob getJob() {
-		return job;
-	}
-
-	
-	public void setJob(PersonJob job){
-		this.job = job;
-	}
-	
-	
-	public void setJob(String job_name) throws PersonException {
-		if (job_name == null || job_name.equals("")) {  // pusty łańcuch znaków oznacza stanowisko niezdefiniowane
-			this.job = PersonJob.UNKNOWN;
-			return;
-		}
-		for(PersonJob job : PersonJob.values()){
-			if (job.jobName.equals(job_name)) {
-				this.job = job;
-				return;
-			}
-		}
-		throw new PersonException("Nie ma takiego stanowiska.");
-	}
-
-	
-	@Override
-	public String toString() {  
-		return firstName + " " + lastName;
-	}
-	
 	
 	public static void printToFile(PrintWriter writer, Person person){
 		writer.println(person.firstName + "#" + person.lastName + 
-				"#" + person.birthYear + "#" + person.job);
+				"#" + person.birthYear );
 	}
 	
 	
@@ -195,7 +132,6 @@ public class Person {
 			String[] txt = line.split("#");
 			Person person = new Person(txt[0], txt[1]);
 			person.setBirthYear(txt[2]);
-			person.setJob(txt[3]);	
 			return person;
 		} catch(IOException e){
 			throw new PersonException("Wystąpił błąd podczas odczytu danych z pliku.");
